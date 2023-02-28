@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "dom-compare": "^0.6.0",
+    "selenium-webdriver": "^4.8.1"
+  },
+  "devDependencies": {
+    "playwright-core": "^1.31.1"
+  }
+}
