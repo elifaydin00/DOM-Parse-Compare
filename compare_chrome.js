@@ -88,6 +88,9 @@ async function main() {
     console.log(reporter.report(result));
     //console.log(Object.keys(groupedDiff)); //prints node XPATH
     //console.log(Object.values(groupedDiff)); //prints array of differences
+
+    
+  
 }
 
 main();
