@@ -1,22 +1,35 @@
-const { Builder, By, Key } = require("selenium-webdriver");
+const { Builder, Options } = require("selenium-webdriver");
 const { DOMParser, XMLSerializer } = require('xmldom');
+const chrome = require("selenium-webdriver/chrome");
 
 async function get_dom(url, browserName) {
-    if (!browserName || typeof browserName !== 'string') {
-      throw new Error('Invalid browser name');
-    }
-  
-    let driver = await new Builder().forBrowser(browserName).build();
-    try {
-      await driver.get(url);
-      const serializedDOM = await driver.executeScript(
-        "return new XMLSerializer().serializeToString(document);"
-      );
-      return serializedDOM;
-    } finally {
-      await driver.quit();
-    }
+  if (!browserName || typeof browserName !== 'string') {
+    throw new Error('Invalid browser name');
   }
+
+  let options = new chrome.Options();
+
+  if (typeof options.setPageLoadStrategy === 'function') {
+    options.setPageLoadStrategy('normal'); //normal or eager
+  } else {
+    console.warn('Page load strategy not supported for this driver');
+  } //implement for other browsers like mozilla
+
+  let driver = await new Builder()
+    .forBrowser(browserName)
+    .setChromeOptions(options)
+    .build();
+
+  try {
+    await driver.get(url);
+    const serializedDOM = await driver.executeScript(
+      "return new XMLSerializer().serializeToString(document);"
+    );
+    return serializedDOM;
+  } finally {
+    await driver.quit();
+  }
+}
 
 async function get_dom_chrome(url) {
   return get_dom(url, 'chrome');
@@ -59,7 +72,7 @@ async function main() {
     groupedDiff = reporter.getDifferences(result); // object, key - node XPATH, value - array of differences (strings)
     
     // string representation
-    //console.log(reporter.report(result));
+    console.log(reporter.report(result));
 
     console.log("*************\n");
     const extractedStrings = [];
@@ -67,7 +80,7 @@ async function main() {
 
     for (var i = 0; i < diff.length; i++){
       if(diff[i].message.includes("expected value") && diff[i].message.includes("instead of")){
-        console.log("Parse by regex and push: ", diff[i].message);
+        //console.log("Parse by regex and push: ", diff[i].message);
         const match = diff[i].message.match(/expected value '([^']*)' instead of '([^']*)'/);
         if (match) {
           extractedStrings.push(match[1], match[2]);
