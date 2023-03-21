@@ -43,12 +43,13 @@ async function main() {
 
     //Browser Comparison
 
-    const dom1 = await get_dom_chrome('https://www.garantibbva.com.tr/');
+    const dom1 = await get_dom_chrome('https://hipmunk-com.com/');
+    console.log(dom1);
     const parser1 = new DOMParser();
     const xmlDoc1 = parser1.parseFromString(dom1, "application/xml");
 
     //Same browser (instance) comparison
-    const dom3 = await get_dom_chrome('https://www.garantibbva.com.tr/');
+    const dom3 = await get_dom_chrome('https://hipmunk-com.com/');
     
     const parser3 = new DOMParser();
     const xmlDoc3 = parser3.parseFromString(dom3, "application/xml");
