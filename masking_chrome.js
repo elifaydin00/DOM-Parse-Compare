@@ -44,7 +44,7 @@ async function main() {
     //Browser Comparison
 
     const dom1 = await get_dom_chrome('https://hipmunk-com.com/');
-    console.log(dom1);
+    //console.log(dom1);
     const parser1 = new DOMParser();
     const xmlDoc1 = parser1.parseFromString(dom1, "application/xml");
 
@@ -90,30 +90,58 @@ async function main() {
     }
     console.log(extractedStrings);
 
+    extractedValues = [];
+
+    for (let i = 0; i < extractedStrings.length; i++) {
+      const string = extractedStrings[i];
+      const regex = /(?<=\=|&)(\d+\.\d+|\d+)(?=\&|$)/g;
+      let match;
+      
+      while ((match = regex.exec(string)) !== null) {
+        extractedValues.push(match[0]);
+      }
+    }
+
+    extractedValues = extractedValues.filter(val => val.length !== 1);
+    console.log(extractedValues);
+
     /*Now, convert dom1 and dom2 to strings and mask if given strings exists */
     const serializer = new XMLSerializer();
-    const str1_doc = serializer.serializeToString(xmlDoc1);
+    str1_doc = serializer.serializeToString(xmlDoc1);
     
-    const words = str1_doc.split(' ');
-    //change the word into MASKED if it exists in extractedStrings
-    const maskedWords = words.map(word => extractedStrings.includes(word) ? 'MASKED' : word);
+    extractedValues.forEach((val) => {
+      str1_doc = str1_doc.replaceAll(val, "MASKED");
+    });
 
-    const maskedStr1 = maskedWords.join(' ');
-
-    //console.log(maskedStr1);
+    console.log(str1_doc);
 
     const serializer2 = new XMLSerializer();
-    const str2_doc = serializer.serializeToString(xmlDoc3);
+    str2_doc = serializer.serializeToString(xmlDoc3);
     
-    const words2 = str2_doc.split(' ');
-    //change the word into MASKED if it exists in extractedStrings
-    const maskedWords2 = words.map(word => extractedStrings.includes(word) ? 'MASKED' : word);
+    extractedValues.forEach((val) => {
+      str2_doc = str2_doc.replaceAll(val, "MASKED");
+    });
+  
+    //comparison after masked
 
-    const maskedStr2 = maskedWords.join(' ');
+    parser_masked1 = new DOMParser();
+    xmlDoc1_parsed = parser_masked1.parseFromString(str1_doc, "application/xml");
 
-    //console.log(maskedStr2);
+    parser_masked2 = new DOMParser();
+    xmlDoc2_parsed = parser_masked2.parseFromString(str2_doc, "application/xml");
 
-    //values change?? 
+    var compare2 = require('dom-compare').compare,
+    reporter = require('dom-compare').GroupingReporter,
+    expected = xmlDoc1_parsed,
+    actual = xmlDoc2_parsed,
+    result, diff, groupedDiff;
+ 
+    // compare to DOM trees, get a result object
+    result = compare(expected, actual);
+    
+    // get comparison result
+    console.log(result.getResult()); // false cause' trees are different
+
 }
 
 main();
