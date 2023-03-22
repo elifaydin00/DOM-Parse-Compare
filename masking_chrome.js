@@ -140,7 +140,7 @@ async function main() {
     result = compare(expected, actual);
     
     // get comparison result
-    console.log(result.getResult()); // false cause' trees are different
+    console.log(result.getResult()); // True after masked
 
 }
 
