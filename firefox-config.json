@@ -1,0 +1,14 @@
+{
+    "rules" : [
+        {
+        "type": "regex",
+        "pattern": "<!DOCTYPE html>\\\\n",
+        "action": "replace",
+        "value": "<!DOCTYPE html>"
+        }
+    ],
+
+    "lastUpdated": "2023-01-01T00:00:00.000Z",
+    "type:": "browser",
+    "domain": "firefox"
+}

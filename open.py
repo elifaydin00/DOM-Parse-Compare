@@ -31,9 +31,9 @@ if __name__ == "__main__":
     for bank, page in pages.items():
         banks_and_doms[bank] = {}
 
-        d5 = pc.edge()
+        d5 = pc.chrome()
         d5.get(page)
         dom = d5.execute_script(jsscript)
-        banks_and_doms[bank]["edge"] = dom
+        banks_and_doms[bank]["chrome"] = dom
         print(dom)
         d5.quit()

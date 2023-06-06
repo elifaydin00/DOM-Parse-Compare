@@ -1,67 +1,76 @@
 {
     "rules": [
         {
-            "rule": "regex",
-            "pattern": "/rsa\\.js\\?(\\d+)\"/",
+            "type": "regex",
+            "pattern": "rsa\\.js\\?(\\d+)",
             "action": "replace",
             "value": "_"
         },
         {
-            "rule": "regex",
-            "pattern": "/barrett\\.js\\?(\\d+)\"/",
+            "type":"regex",
+            "pattern": "Tea.EncryptionKey = \\\\\"(\\w+)\\\\\";",
             "action": "replace",
             "value": "_"
         },
         {
-            "rule": "regex",
-            "pattern": "/bigint\\.js\\?(\\d+)\"/",
+            "type": "regex",
+            "pattern": "barrett\\.js\\?(\\d+)\"",
             "action": "replace",
             "value": "_"
         },
         {
-            "rule": "regex",
-            "pattern": "/tea\\.js\\?(\\d+)\"/",
+            "type": "regex",
+            "pattern": "bigint\\.js\\?(\\d+)\"",
             "action": "replace",
             "value": "_"
         },
         {
-            "rule": "regex",
-            "pattern": "\\|rpid=(-?\\d+)\\|/",
+            "type": "regex",
+            "pattern": "tea\\.js\\?(\\d+)\"",
             "action": "replace",
             "value": "_"
         },
         {
-            "rule": "regex",
-            "pattern": "/Tea\\.[A-Z0-9]+ = \"[A-Z0-9]+\";/",
+            "type": "regex",
+            "pattern": "\\|rpid=(-?\\d+)\\|",
             "action": "replace",
             "value": "_"
         },
         {
-            "rule": "regex",
-            "pattern": "/aspx\\?T=([A-Z0-9]+)&/",
+            "type": "regex",
+            "pattern": "aspx\\?T=([A-Z0-9]+)&",
             "action": "replace",
             "value": "_"
         },
         {
-            "rule": "regex",
-            "pattern": "/aspx\\?T=([A-Z0-9]+)\"/",
+            "type": "regex",
+            "pattern": "aspx\\?T=([A-Z0-9]+)\\\\",
             "action": "replace",
             "value": "_"
         },
         {
-            "rule": "regex",
-            "pattern": "/veribranch_windowid\\s*=\\s*'([\\da-f-]+)'/",
+            "type": "regex",
+            "pattern": "veribranch_windowid\\s*=\\s*'([\\da-f-]+)'",
             "action": "replace",
             "value": "_"
         },
         {
-            "rule": "regex",
-            "pattern": "/RSAEncryptInMemory\\('([A-Za-z0-9-]+)'\\)/",
+            "type": "regex",
+            "pattern": "RSAEncryptInMemory\\('([A-Za-z0-9-]+)'\\)",
             "action": "replace",
             "value": "_"
+        },
+        {
+            "type": "regex",
+            "pattern": "noresize=\\\\\"noresize\\\\\"",
+            "action": "replace",
+            "value": "noresize=\\\\\"\\\\\""
         }
     ],
 
+    "inherits": [
+        "firefox_config.json"
+    ],
     "lastUpdated": "2023-01-01T00:00:00.000Z",
     "domain": "https://akbank.com"
 }
