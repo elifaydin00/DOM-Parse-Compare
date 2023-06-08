@@ -1,0 +1,49 @@
+class DomCompareService {
+    constructor(document) {
+      this.document = document;
+      this.serialized_document = null;
+    }
+
+    getShadowDomHtml(shadowRoot) {
+      let shadowHTML = "";
+      for (let el of shadowRoot.childNodes) {
+        shadowHTML += el.nodeValue || el.outerHTML;
+      }
+      return shadowHTML;
+    }
+
+    replaceShadowDomsWithHtml(rootElement) {
+      for (let el of rootElement.querySelectorAll("*")) {
+        if (el.shadowRoot) {
+          this.replaceShadowDomsWithHtml(el.shadowRoot);
+          el.innerHTML += this.getShadowDomHtml(el.shadowRoot);
+        }
+      }
+    }
+
+    serializeDOM() {
+      const serialized = new XMLSerializer().serializeToString(this.document);
+      this.serialized_document = serialized;
+    }
+
+    sendRequest() {
+      $.ajax({
+        url: "http://localhost:3000/compare",
+        type: "POST",
+        data: { document: this.serialized_document, os_param: "Windows" },
+        crossDomain: true,
+        dataType: "json",
+        success: function (data) {
+          console.log("Success:", data);
+        },
+        error: function (data) {
+          console.log("Error:", data);
+        },
+      });
+    }
+  }
+
+  const service = new DomCompareService(document);
+  service.replaceShadowDomsWithHtml(service.document.body);
+  service.serializeDOM();
+  return service.serialized_document;

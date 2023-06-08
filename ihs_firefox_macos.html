@@ -1,0 +1,374 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="App"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Cache-Control" content="no-store" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<title>Üye Girişi - IHS.com.tr</title>
+<meta name="description" content="IHS üyeliğine bu sayfa aracılığı ile giriş yapıp, hizmetlerinize kolayca ulaşabilirsiniz. " />
+<link href="styles/style.css" rel="stylesheet" type="text/css" />
+<!--[if IE 8]><link rel="stylesheet" type="text/css" href="styles/ie8.css" /><![endif]-->
+<script async="" src="//www.google-analytics.com/analytics.js"></script><script type="text/javascript" src="scripts/js_ihs_sitemesh/jquery-1.12.0.min.js"></script>
+<script type="text/javascript" src="scripts/js_ihs_sitemesh/ihs_script.js"></script>
+<script type="text/javascript" src="scripts/js_ihs_sitemesh/jquery.styleSelect.js"></script>
+
+
+
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-2876146-1', 'auto');  // Replace with your property ID.
+ga('set', 'dimension1', 'edestek');
+ga('require', 'displayfeatures');
+
+ga('send', 'pageview');
+
+</script>
+
+
+
+<!-- Taboola Pixel Code -->
+<script type="text/javascript">
+    window._tfa = window._tfa || [];
+    _tfa.push({ notify: 'action',name: 'conversion' });
+</script>
+<script src="//cdn.taboola.com/libtrc/ihs-sc-tr/tfa.js"></script>
+<!-- End Taboola Pixel Code -->
+
+
+<script type="text/javascript">
+
+
+
+$(document).ready(function() {
+$(".SelectBook").styleSelect({styleClass: "selectBook", optionsWidth: 0,speed: 'fast'});
+});
+</script>
+
+<script language="JAVASCRIPT" type="text/javascript">
+	&lt;!--
+	function openverisign() {
+		verisign=window.open('https://sealinfo.verisign.com/splash?form_file=fdf/splash.fdf&amp;dn=www.e-destek.com&amp;lang=tr');
+	}
+	//--&gt;
+</script>
+
+<script type="text/javascript">
+
+function checkReminder()
+{
+	document.getElementById("selectType").value = $('#selectType option[selected="selected"]').attr('value');
+	if(document.getElementById("selectType").value==-1)
+	{
+		return false;
+	}
+	return true;
+}
+function orderReminder(value)
+{
+	var value = $('.select_new_i ul li span.selected').parent('li').attr('id');
+	$('#selectType option').removeAttr('selected');
+	$('#selectType option[value="' + value + '"]').attr('selected', 'selected');
+
+	if(value ==-1)
+	{
+	   document.getElementById("emailLabel").style.display='none';
+	   document.getElementById("emailInput").style.display='none';
+	    document.getElementById("gsmLabel").style.display='none';
+	    document.getElementById("gsmInput").style.display='none';
+	    document.getElementById("subGon").style.display='none';
+
+	}
+	else if(value==0)
+	{
+	  document.getElementById("emailLabel").style.display='';
+	   document.getElementById("emailInput").style.display='';
+	    document.getElementById("gsmLabel").style.display='none';
+	    document.getElementById("gsmInput").style.display='none';
+	    document.getElementById("subGon").style.display='';
+	}
+	else if(value==1)
+	{
+	  document.getElementById("emailLabel").style.display='none';
+	   document.getElementById("emailInput").style.display='none';
+	    document.getElementById("gsmLabel").style.display='';
+	    document.getElementById("gsmInput").style.display='';
+	    document.getElementById("subGon").style.display='';
+	  	}
+
+}
+
+
+</script></head>
+
+
+
+
+<!--<script type="text/javascript"-->
+<!--	src="/edestek/scripts/prototype.js"></script>-->
+<!--<script type="text/javascript"-->
+<!--	src="/edestek/scripts/scriptaculous.js"></script>-->
+<!--<script type="text/javascript" src="/edestek/scripts/global.js"></script>-->
+
+
+
+
+<body>
+
+
+<div class="main eDestekMain">
+
+
+
+<div class="logo_header" style="position:relative; top:70px;left:50px"><img src="images/images_ihs_sitemesh/logo_e-destek.gif" alt="e-destek" width="222" height="55" /></div>
+<div class="main_right_column rcolumn" style="position:relative; text-align:center ; top:70px ; left:-50px;">
+<div class="main_right_column_top_l"><div class="main_right_column_top_r"><img src="images/images_ihs_sitemesh/x.gif" alt="" width="1" height="1" /></div></div>
+
+<!-- Box -->
+<div class="box">
+<div class="bg_top"><div class="bg_bot"><div class="bg_left"><div class="bg_right">
+<div class="bg_ctl"><div class="bg_ctr"><div class="bg_cbl"><div class="bg_cbr">
+<!-- Box Contur -->
+<div class="box_content_innerf" style="display: flex;">
+<div style="width: 35%">
+
+<div class="_table_" style="text-align:left; width:350px;">
+<div class="_table_hedr">Kullanıcı Girişi</div>
+<div class="_table_body">
+
+<form method="post" id="loginForm" action="/edestek/perform_login">
+<table>
+        <tbody><tr>
+         <td width="18%">E-Posta Adresi</td>
+<td>
+<input name="username" id="username" type="text" class="input_txt login_input_text" value="" tabindex="1" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAmJJREFUWAntV7uKIkEUvbYGM4KID3wEIgjKRLLpKGLgFwiCfslGhkb7IbLgAzE1GhMxWxRRBEEwmEgDERWfW6fXuttq60a2wU6B1qlzb9U5fatsKROJVigUArvd7oeAyePx6Af3qGYymT7F2h8Wi+V7Pp+fmE7iv4Sw81GieusKIzNh4puCJzdaHIagCW1F4KSeQ4O4pPLoPb/3INBGBZ7avgz8fxWIxWIUCoX43Blegbe3NwoGg88zwMoncFUB8Yokj8dDdrv9MpfHVquV/H4/iVcpc1qgKAp5vV6y2WxaWhefreB0OimXy6kGkD0YDKhSqdB2u+XJqVSK4vE4QWS5XKrx0WjEcZ/PR9lslhwOh8p1Oh2q1Wp0OBw4RwvOKpBOp1kcSdivZPLvmxrjRCKhiiOOSmQyGXp5ecFQbRhLcRDRaJTe39//BHW+2cDr6ysFAoGrlEgkwpwWS1I7z+VykdvtliHuw+Ew40vABvb7Pf6hLuMk/rGY02ImBZC8dqv04lpOYjaw2WzUPZcB2WMPZet2u1cmZ7MZTSYTNWU+n9N4PJbp3GvXYPIE2ADG9Xqder2e+kTr9ZqazSa1222eA6FqtUoQwqHCuFgscgWQWC6XaTgcEiqKQ9poNOiegbNfwWq1olKppB6yW6cWVcDHbDarIuzuBBaLhWrqVvwy/6wCMnhLXMbR4wnvtX/F5VxdAzJoRH+2BUYItlotmk6nLGW4gX6/z+IAT9+CLwPPr8DprnZ2MIwaQBsV+DBKUEfnQ8EtFRdFneBDKWhCW8EVGbdUQfxESR6qKhaHBrSgCe3fbLTpPlS70M0AAAAASUVORK5CYII=&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;" />
+</td>
+</tr>
+        <tr>
+         <td>Şifre</td>
+<td>
+<input name="password" id="password" type="password" class="input_txt login_input_text" value="" tabindex="2" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAmJJREFUWAntV7uKIkEUvbYGM4KID3wEIgjKRLLpKGLgFwiCfslGhkb7IbLgAzE1GhMxWxRRBEEwmEgDERWfW6fXuttq60a2wU6B1qlzb9U5fatsKROJVigUArvd7oeAyePx6Af3qGYymT7F2h8Wi+V7Pp+fmE7iv4Sw81GieusKIzNh4puCJzdaHIagCW1F4KSeQ4O4pPLoPb/3INBGBZ7avgz8fxWIxWIUCoX43Blegbe3NwoGg88zwMoncFUB8Yokj8dDdrv9MpfHVquV/H4/iVcpc1qgKAp5vV6y2WxaWhefreB0OimXy6kGkD0YDKhSqdB2u+XJqVSK4vE4QWS5XKrx0WjEcZ/PR9lslhwOh8p1Oh2q1Wp0OBw4RwvOKpBOp1kcSdivZPLvmxrjRCKhiiOOSmQyGXp5ecFQbRhLcRDRaJTe39//BHW+2cDr6ysFAoGrlEgkwpwWS1I7z+VykdvtliHuw+Ew40vABvb7Pf6hLuMk/rGY02ImBZC8dqv04lpOYjaw2WzUPZcB2WMPZet2u1cmZ7MZTSYTNWU+n9N4PJbp3GvXYPIE2ADG9Xqder2e+kTr9ZqazSa1222eA6FqtUoQwqHCuFgscgWQWC6XaTgcEiqKQ9poNOiegbNfwWq1olKppB6yW6cWVcDHbDarIuzuBBaLhWrqVvwy/6wCMnhLXMbR4wnvtX/F5VxdAzJoRH+2BUYItlotmk6nLGW4gX6/z+IAT9+CLwPPr8DprnZ2MIwaQBsV+DBKUEfnQ8EtFRdFneBDKWhCW8EVGbdUQfxESR6qKhaHBrSgCe3fbLTpPlS70M0AAAAASUVORK5CYII=&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;" />
+</td>
+</tr>
+
+</tbody></table>
+<div class="btn_sumbit" style="position:relative; right:15px;" align="right"><input type="image" src="images/images_ihs_sitemesh/btn_giris.gif" alt="Devam" tabindex="3" width="89" vspace="6" hspace="5" height="26" /></div>
+</form>
+</div></div>
+
+<div id="error-message-top-box"></div>
+
+<br /><br />
+<div class="_table_" style="text-align:left; width:350px;margin-top: 26px;">
+<div class="_table_hedr">Şifremi Unuttum </div>
+<div class="_table_body">
+
+<form name="passwordReminder" action="passwordReminder.html" method="post" onsubmit="return checkReminder();">
+<input type="hidden" name="gsmExt" value="" tabindex="4" />
+<table>
+        <tbody><tr>
+         <td width="18%">Şifremi Gönder</td>
+<td><div class="select_new_i" style="width:240px;">
+<div tabindex="5" style="position: relative; width: 240px;" class="selectBook" id="selectbox_type1686044474214"><ul style="position: absolute; z-index: 100; top: 26px; left: 0px; display: none;"><li id="-1"><span style="display: block;" class="selected">Lütfen Seçiniz</span></li><li id="0"><span style="display: block;">Email Adresime</span></li><li id="1"><span style="display: block;">Cep Telefonuma</span></li></ul><span id="-1" class="activeSelect">Lütfen Seçiniz</span></div><select id="selectType" name="type" style="width: 240px; display: none;" onchange="orderReminder()" class="SelectBook" tabindex="5">
+
+  	<option value="-1" selected="selected">Lütfen Seçiniz</option>
+	<option value="0">Email Adresime</option>
+	<option value="1">Cep Telefonuma</option>
+
+</select>
+</div>
+</td></tr>
+
+<tr id="gsmLabel" style="display:none">
+         <td width="18%">Cep Telefonu</td>
+<td><div class="formtext_box" style="width:240px;display:none" id="gsmInput"><div class="formtext_box_l"><div class="formtext_box_r">
+<input name="gsmNo" type="text" class="input_txt" value="" tabindex="6" /></div></div></div></td>
+</tr>
+
+<tr id="emailLabel" style="display:none">
+         <td>Eposta Adresi </td>
+<td><div class="formtext_box" id="emailInput" style="display:none; width:240px"><div class="formtext_box_l"><div class="formtext_box_r">
+<input name="email" type="text" class="input_txt" value="" tabindex="7" /></div></div></div></td>
+</tr>
+
+
+</tbody></table>
+<div class="btn_sumbit" id="subGon" style=" display:none; position:relative; right:15px;" align="right"><input type="image" src="images/images_ihs_sitemesh/btn_gonder.gif" alt="Devam" tabindex="8" width="89" vspace="6" hspace="5" height="26" /></div>
+
+</form>
+</div>
+
+
+<div id="info-message-bottom-box"></div>
+
+
+</div>
+
+</div>
+
+<div style="width: 60%;text-align: left;margin-left: 26px;">
+
+	<link type="text/css" rel="stylesheet" href="styles/glider.min.css" />
+<script type="text/javascript" src="scripts/jquery.alerts.js"></script>
+<script type="text/javascript" src="scripts/glider.min.js"></script>
+<script type="text/javascript" src="scripts/glider-autoplay.min.js"></script>
+
+<div class="glider-contain">
+	<div class="glider" id="slider-banner" style="overflow: hidden !important;">
+
+
+		<div class="glider-track" style="width: 1226px;"><div class="glider-slide active center visible" data-gslide="0" style="height: auto; width: 613px;">
+				<a class="1" target="_blank" rel="noopener noreferrer" href="https://www.ihs.com.tr/kurumsal/kampanyalar.html?duyuru=133">
+					<img class="1" src="https://img.ihs.com.tr/homepage-banner/com-domain-kampanya-login.png" />
+				</a>
+			</div><div class="glider-slide right-1" data-gslide="1" style="height: auto; width: 613px;">
+				<a class="2" target="_blank" rel="noopener noreferrer" href="https://www.ihs.com.tr/referans-kazanc-programi.html">
+					<img class="2" src="https://img.ihs.com.tr/homepage-banner/referans-edestek-banner.png" />
+				</a>
+			</div></div></div>
+	<button class="glider-prev" id="banner-prev" tabindex="9">«</button>
+	<button class="glider-next" id="banner-next" tabindex="10">»</button>
+	<div role="tablist" id="dots-slider" class="glider-dots"><button data-index="0" aria-label="Page 1" role="tab" class="glider-dot active"></button><button data-index="1" aria-label="Page 2" role="tab" class="glider-dot"></button></div>
+</div>
+
+
+<script>
+gliderAutoplay(
+new Glider(document.getElementById('slider-banner'), {
+	  slidesToShow: 1,
+	  dots: '#dots-slider',
+	  rewind: true,
+	  draggable: false,
+	  arrows: {
+	    prev: '#banner-prev',
+	    next: '#banner-next'
+	  },
+	  responsive: [
+		    {
+		      // screens greater than &gt;= 775px
+		      breakpoint: 775,
+		      settings: {
+		        // Set to `auto` and provide item width to adjust to viewport
+		        slidesToShow: '1'
+		      }
+		    },{
+		      // screens greater than &gt;= 1024px
+		      breakpoint: 1024,
+		      settings: {
+		        slidesToShow: '1'
+		      }
+		    }
+		  ]
+	}),
+	{
+	interval: 8000,
+	}
+	);
+</script>
+
+
+
+
+<div>
+		<h1><p><strong><font color="#990000"> Şifremi Unuttum</font></strong> </p></h1>
+
+		<hr />
+
+		<p>
+		Kullanıcı Bilgilerinizi "<strong>Şifremi Unuttum</strong>" bölümünü kullanarak öğrenebilirsiniz. Sisteme giriş yaptığınızda eğer GSM numaranız sistemde kayıtlı değilse, sistem otomatik olarak GSM numaranızı talep edecektir.Geçerli GSM numaranızı kaydetmediğiniz sürece sistemi kullanmanız mümkün olmayacaktır.
+		</p>
+	</div>
+
+</div>
+<!-- Box Contur -->
+</div></div></div></div>
+</div></div></div></div>
+</div>
+
+
+
+</div>
+
+<div class="main_right_column_bot_l"><div class="main_right_column_bot_r"><img src="images/images_ihs_sitemesh/x.gif" alt="" width="1" height="1" /></div></div>
+</div>
+<div class="cl"><img src="images/images_ihs_sitemesh/x.gif" alt="" width="1" height="1" /></div>
+
+
+
+</div>
+
+
+
+
+
+<div id="footer" style="position:relative;  top:70px; width:1064px">
+<div class="bottom_top"><div class="left"><div class="right"></div></div></div>
+<div class="bottom" style="position:relative;  width:875px">
+<div class="cleft"><div class="cright">
+
+<span class="social-icons">
+	<span class="social-text">Bizi Takip Edin</span>
+
+	<a href="https://www.instagram.com/ihstelekom/" target="_blank" class="fapng fapng-instagram"></a>
+	<a href="https://twitter.com/ihstelekom" target="_blank" class="fapng fapng-twitter"></a>
+	<a href="https://www.facebook.com/ihstelekom" target="_blank" class="fapng fapng-facebook"></a>
+</span>
+<!--
+<div class="verisign_logo" >
+	<a href="https://itunes.apple.com/us/app/e-destek/id972106032?mt=8" target="_blank">
+		<img src="images/images_ihs_sitemesh/beta_uygulama.png"  alt="title="Click to Verify - This site chose VeriSign SSL for secure e-commerce and confidential communications." />
+	</a>
+</div>
+-->
+
+<div class="cl"></div>
+
+</div></div>
+
+
+
+
+</div>
+<div class="bottom_bot"><div class="left"><div class="right"><img src="images/images_ihs_sitemesh/x.gif" alt="" width="1" height="1" /></div></div></div>
+
+
+<div class="copy_r">© E-destek.com 1999 — 2023. Tüm Hakları Saklıdır. - <a href="https://www.ihs.com.tr/kurumsal/kvk-aydinlatma-metni.html" target="blank" style="color: #484855; text-decoration: underline">KVKK Aydınlatma Metni</a></div>
+<div class="copy_links"><a href="https://www.ihs.com.tr/blog/">IHS Blog</a> - <a href="https://www.ihs.com.tr/seo/">SEO</a></div>
+<div class="cl"><img src="images/images_ihs_sitemesh/x.gif" alt="" width="1" height="1" /></div>
+</div>
+
+
+
+
+
+
+
+
+<style>
+.callout {
+    text-align: left;
+    margin-bottom: 10px;
+    border-left: 3px solid #EEE;
+}
+.callout-danger {
+    background-color: #EEE2E2;
+    border-color: #D65C4F;
+    border-radius: 4px;
+}
+
+.callout-danger h1 {
+    color: #990000;
+    padding: 4px;
+}
+.callout-danger p {
+    padding: 4px;
+}
+</style>
+
+
+</body></html>

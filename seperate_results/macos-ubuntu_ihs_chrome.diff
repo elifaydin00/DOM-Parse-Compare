@@ -1,0 +1,97 @@
+diff --git a/sample.js b/sample.js
+        index 0000001..0ddf2ba
+        --- a/sample.js
+        +++ b/sample.js 
+ 
+@@ -20,7 +20,8 @@
+ _tfa.push({ notify: 'action',name: 'conversion' });
+ </script>
+ <script src="//cdn.taboola.com/libtrc/ihs-sc-tr/tfa.js"></script>
+-<!-- End Taboola Pixel Code --><script type="text/javascript">$(document).ready(function() {
++<!-- End Taboola Pixel Code -->
++<script type="text/javascript">$(document).ready(function() {
+ $(".SelectBook").styleSelect({styleClass: "selectBook", optionsWidth: 0,speed: 'fast'});
+ });
+ </script><script language="JAVASCRIPT" type="text/javascript">
+@@ -48,7 +49,8 @@
+ document.getElementById("emailInput").style.display='none';
+ document.getElementById("gsmLabel").style.display='none';
+ document.getElementById("gsmInput").style.display='none';
+-document.getElementById("subGon").style.display='none';}
++document.getElementById("subGon").style.display='none';
++}
+ else if(value==0)
+ {
+ document.getElementById("emailLabel").style.display='';
+@@ -64,7 +66,8 @@
+ document.getElementById("gsmLabel").style.display='';
+ document.getElementById("gsmInput").style.display='';
+ document.getElementById("subGon").style.display='';
+-}}</script></head><!--<script type="text/javascript"-->
++}
++}</script></head><!--<script type="text/javascript"-->
+ <!--	src="/edestek/scripts/prototype.js"></script>-->
+ <!--<script type="text/javascript"-->
+ <!--	src="/edestek/scripts/scriptaculous.js"></script>-->
+@@ -78,7 +81,8 @@
+ <div class="box_content_innerf" style="display: flex;">
+ <div style="width: 35%"><div class="_table_" style="text-align:left; width:350px;">
+ <div class="_table_hedr">Kullanıcı Girişi</div>
+-<div class="_table_body"><form method="post" id="loginForm" action="/edestek/perform_login">
++<div class="_table_body">
++<form method="post" id="loginForm" action="/edestek/perform_login">
+ <table>
+ <tbody><tr>
+ <td width="18%">E-Posta Adresi</td>
+@@ -97,13 +101,15 @@
+ </div></div><div id="error-message-top-box"></div><br /><br />
+ <div class="_table_" style="text-align:left; width:350px;margin-top: 26px;">
+ <div class="_table_hedr">Şifremi Unuttum </div>
+-<div class="_table_body"><form name="passwordReminder" action="passwordReminder.html" method="post" onsubmit="return checkReminder();">
++<div class="_table_body">
++<form name="passwordReminder" action="passwordReminder.html" method="post" onsubmit="return checkReminder();">
+ <input type="hidden" name="gsmExt" value="" tabindex="4" />
+ <table>
+ <tbody><tr>
+ <td width="18%">Şifremi Gönder</td>
+ <td><div class="select_new_i" style="width:240px;">
+-<div tabindex="5" class="selectBook" id="selectbox_type1686044647197" style="position: relative; width: 240px;"><ul style="position: absolute; z-index: 100; top: 26px; left: 0px; display: none;"><li id="-1"><span style="display: block;" class="selected">Lütfen Seçiniz</span></li><li id="0"><span style="display: block;">Email Adresime</span></li><li id="1"><span style="display: block;">Cep Telefonuma</span></li></ul><span id="-1" class="activeSelect">Lütfen Seçiniz</span></div><select id="selectType" name="type" style="width: 240px; display: none;" onchange="orderReminder()" class="SelectBook" tabindex="5"><option value="-1" selected="selected">Lütfen Seçiniz</option>
++<div tabindex="5" class="selectBook" id="selectbox_type1685997552201" style="position: relative; width: 240px;"><ul style="position: absolute; z-index: 100; top: 26px; left: 0px; display: none;"><li id="-1"><span style="display: block;" class="selected">Lütfen Seçiniz</span></li><li id="0"><span style="display: block;">Email Adresime</span></li><li id="1"><span style="display: block;">Cep Telefonuma</span></li></ul><span id="-1" class="activeSelect">Lütfen Seçiniz</span></div><select id="selectType" name="type" style="width: 240px; display: none;" onchange="orderReminder()" class="SelectBook" tabindex="5">
++<option value="-1" selected="selected">Lütfen Seçiniz</option>
+ <option value="0">Email Adresime</option>
+ <option value="1">Cep Telefonuma</option></select>
+ </div>
+@@ -121,18 +127,19 @@
+ <script type="text/javascript" src="scripts/jquery.alerts.js"></script>
+ <script type="text/javascript" src="scripts/glider.min.js"></script>
+ <script type="text/javascript" src="scripts/glider-autoplay.min.js"></script><div class="glider-contain">
+-<div class="glider" id="slider-banner" style="overflow: hidden !important;"><div class="glider-track" style="width: 1226px;"><div class="glider-slide active center visible" data-gslide="0" style="height: auto; width: 613px;">
++<div class="glider" id="slider-banner" style="overflow: hidden !important;">
++<div class="glider-track" style="width: 1226px;"><div class="glider-slide left-1" data-gslide="0" style="height: auto; width: 613px;">
+ <a class="1" target="_blank" rel="noopener noreferrer" href="https://www.ihs.com.tr/kurumsal/kampanyalar.html?duyuru=133">
+ <img class="1" src="https://img.ihs.com.tr/homepage-banner/com-domain-kampanya-login.png" />
+ </a>
+-</div><div class="glider-slide right-1" data-gslide="1" style="height: auto; width: 613px;">
++</div><div class="glider-slide active center visible" data-gslide="1" style="height: auto; width: 613px;">
+ <a class="2" target="_blank" rel="noopener noreferrer" href="https://www.ihs.com.tr/referans-kazanc-programi.html">
+ <img class="2" src="https://img.ihs.com.tr/homepage-banner/referans-edestek-banner.png" />
+ </a>
+ </div></div></div>
+ <button class="glider-prev" id="banner-prev" tabindex="9">«</button>
+ <button class="glider-next" id="banner-next" tabindex="10">»</button>
+-<div role="tablist" id="dots-slider" class="glider-dots"><button data-index="0" aria-label="Page 1" role="tab" class="glider-dot active"></button><button data-index="1" aria-label="Page 2" role="tab" class="glider-dot"></button></div>
++<div role="tablist" id="dots-slider" class="glider-dots"><button data-index="0" aria-label="Page 1" role="tab" class="glider-dot"></button><button data-index="1" aria-label="Page 2" role="tab" class="glider-dot active"></button></div>
+ </div><script>
+ gliderAutoplay(
+ new Glider(document.getElementById('slider-banner'), {
+@@ -166,7 +173,9 @@
+ }
+ );
+ </script><div>
+-<h1><p><strong><font color="#990000"> Şifremi Unuttum</font></strong> </p></h1><hr /><p>
++<h1><p><strong><font color="#990000"> Şifremi Unuttum</font></strong> </p></h1>
++<hr />
++<p>
+ Kullanıcı Bilgilerinizi "<strong>Şifremi Unuttum</strong>" bölümünü kullanarak öğrenebilirsiniz. Sisteme giriş yaptığınızda eğer GSM numaranız sistemde kayıtlı değilse, sistem otomatik olarak GSM numaranızı talep edecektir.Geçerli GSM numaranızı kaydetmediğiniz sürece sistemi kullanmanız mümkün olmayacaktır.
+ </p>
+ </div></div>
