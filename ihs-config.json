@@ -1,0 +1,97 @@
+{
+    "rules": [
+        {
+            "type": "regex",
+            "pattern": "selectbox_type([a-zA-Z0-9]+)",
+            "action": "replace",
+            "value": ""
+        },
+        {
+            "type": "regex",
+            "pattern": "tabindex=\"([0-9]*)\"",
+            "action": "replace",
+            "value": ""
+        },
+        {
+            "type": "regex",
+            "pattern": "width=\"[0-9]*\"", 
+            "action": "replace",
+            "value": ""
+        },
+        {
+            "type": "regex",
+            "pattern": "height=\"[0-9]*\"",
+            "action": "replace",
+            "value": ""
+        },
+        {
+            "type": "regex",
+            "pattern": "hspace=\"[0-9]*\"",
+            "action": "replace",
+            "value": ""
+        },
+        {
+            "type": "regex",
+            "pattern": "vspace=\"[0-9]*\"",
+            "action": "replace",
+            "value": ""
+        },
+        {
+            "type": "regex",
+            "pattern": "align=\"right\"",
+            "action": "replace",
+            "value": ""
+        },
+        {
+            "type": "regex",
+            "pattern": "alt=\"[a-zA-Z-]*\"",
+            "action": "replace",
+            "value": ""
+        },
+        {
+            "type": "regex",
+            "pattern": "right:([0-9]*)px;",
+            "action": "replace",
+            "value": ""
+        },
+        {
+            "type": "regex",
+            "pattern": "([0-9]*)px;",
+            "action": "replace",
+            "value": ""
+        },
+        {
+            "type": "regex",
+            "pattern": "<html xmlns=\"http://www.w3.org/1999/xhtml\" ng-app=\"App\"><head>",
+            "action": "replace",
+            "value": ""
+        },
+        {
+            "type": "regex",
+            "pattern": "\\n",
+            "action": "replace",
+            "value": ""
+        },
+        {
+            "type": "regex",
+            "pattern": " ",
+            "action": "replace",
+            "value": ""
+        },
+        {
+            "type": "regex",
+            "pattern": "glider-slide ([^\"]+)",
+            "action": "replace",
+            "value": ""
+        },
+        {
+            "type": "regex",
+            "pattern": "glider-dot ([^\"]+)",
+            "action": "replace",
+            "value": ""
+          }
+    ],
+
+    "lastUpdated": "2023-06-05T00:00:00.000Z",
+    "domain": "https://www.ihs.com.tr/edestek/login.html"
+}
